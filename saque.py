@@ -5,7 +5,11 @@ restante = valor1 % 100
 
 if valor1 <= saldo and múltiplo:
     print ("Saque efetuado com sucesso!")
+<<<<<<< HEAD
     print ("Agora você tem R${} na conta".format (saldo - valor1))
+=======
+    print ("Agora você tem R${}".format (saldo - valor1))
+>>>>>>> fceb04fa4d8175f87d8b4bf799583639338cad7d
     print ("Você consegue ter {} notas de 100.".format (valor1 // 100))
     print ("Você consegue ter {} notas de 50.".format (valor1 //  50))
     print ("Você consegue ter {} notas de 20.".format (valor1 // 20))
