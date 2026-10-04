@@ -10,34 +10,40 @@ while True:
     e()
     print (f"\033[1;37mP\033[m\033[1;31mR\033[m\033[1;32mO\033[m\033[1;33mG\033[m\033[1;34mR\033[mA\033[1;35mM\033[m\033[1;36mA\033[m\033[1;30mS\033[m:")
     e()
-    print (f"1. \033[4;1;37mTabuada\033[m")
-    print (f"2. \033[4;1;31mCalculadora\033[m")
-    print (f"3. \033[4;1;32mDobro e triplo\033[m")
-    print (f"4. \033[4;1;33mMédia de notas\033[m")
-    print (f"5. \033[4;1;34mReais para dolar\033[m")
-    print (f"6. \033[4;1;35mPar ou ímpar\033[m")
-    print (f"7. \033[4;1;36mPadaria\033[m")
-    print (f"8. \033[4;1;30mLista de compras (com valor total)\033[m ")
-    print (f"9. \033[4;1;37mSortear aluno\033[m")
-    print (f"10. \033[4;1;31mAdivinhar número\033[m")
-    print (f"11. \033[4;1;32mCofre com 3 tentativas de senha\033[m")
-    print (f"12. \033[4;1;33mSistema de cores\033[m")
-    print (f"13. \033[4;1;34mConfirmar idade\033[m")
-    print (f"14. \033[4;1;35mCadastro com confirmação\033[m")
-    print (f"15. \033[4;1;36mAnalisar nome\033[m")
+    print (f"1. \033[4;1;37mTabuada \033[m")
+    print (f"2. \033[4;1;31mCalculadora \033[m")
+    print (f"3. \033[4;1;32mDobro e triplo \033[m")
+    print (f"4. \033[4;1;33mMédia de notas \033[m")
+    print (f"5. \033[4;1;34mReais para dolar \033[m")
+    print (f"6. \033[4;1;35mPar ou ímpar \033[m")
+    print (f"7. \033[4;1;36mCoffee Shop \033[m")
+    print (f"8. \033[4;1;30mLista de compras \033[m ")
+    print (f"9. \033[4;1;37mSortear aluno \033[m")
+    print (f"10. \033[4;1;31mAdivinhar número \033[m")
+    print (f"11. \033[4;1;32mCofre \033[m")
+    print (f"12. \033[4;1;33mSistema de cores \033[m")
+    print (f"13. \033[4;1;34mConfirmar idade \033[m")
+    print (f"14. \033[4;1;35mCadastro com confirmação \033[m")
+    print (f"15. \033[4;1;36mAnalisar nome \033[m")
     e()
     l()
-    programa = int(input("Digite o número do programa que ira querer: "))
+    novo_programa = input("Digite o número ou programa que ira querer: ")
+    programa = novo_programa.upper().strip()
     l()
     
-    if programa == 1:
+    if programa == "1" or programa == "TABUADA":
+        print ("1. Tabuada")
+        l()
         num = int(input("Digite o número que ira querer: "))
         e()
+        l()
         for n in range (1, 11):
             
             print (f"{num} x {n} = {num * n}")
             l()
-    elif programa == 2:
+    elif programa == "2" or programa == "CALCULADORA":
+        print ("2. Calculadora")
+        l()
         print (f"\033[31mBem vindo(a)\033[m \033[32ma\033[m \033[33mminha calculadora!\033[m ")
         l()
         e()
@@ -70,15 +76,18 @@ while True:
         elif op == 6:
             print (f"{n1} % {n2} = {n1 % n2}")  
         l()
-    elif programa == 3:
-        
+    elif programa == "3" or programa == "DOBRO E TRIPLO":
+        print ("3. Dobro e triplo")
+        l()
         num = int(input("Digite um número: "))
         l()
         print (f"O dobro de {num} é {num * 2}")
         l()
         print (f"E o triplo de {num} é {num * 3}")
         
-    elif programa == 4:
+    elif programa == "4" or programa == "MÉDIA DE NOTAS":
+        print ("4. Média de notas")
+        l()
         nota1 = float(input("Digite a primeira nota: "))
         l()
         nota2 = float(input("Digite a segunda nota: "))
@@ -92,21 +101,25 @@ while True:
             print (f"\033[33mRecuperação!\033[m")
         else:
             print (f"\033[31mReprovado!\033[m")
-    elif programa == 5:
+    elif programa == "5" or programa == "REAIS PARA DOLAR":
+        print ("5. Conversor de R$ para US$")
+        l()
         real = float(input("Digite quantos R$ você tem: R$"))
         dolar =  real / 5.21
         l() 
         print (f"Com R${real:.2f} você pode comprar US${dolar:.2f}")
-    elif programa == 6:
-        n = int(input("Digite um número par: "))
+    elif programa == "6" or programa == "PAR OU ÍMPAR":
+        print ("6. Par ou ímpar")
+        l()
+        n = int(input("Digite um número: "))
         l()
         if n %2 ==0:
             print ("Esté número é um número \033[33mPAR!\033[m")
         else:
             print (f"Este número é um número \033[32mÍMPAR!\033[m")
-    elif programa == 7:
+    elif programa == "7" or programa == "COFFEE SHOP":
         
-        print (f"\033[33mCOFFEE SHOP\033[m")
+        print (f"\033[33m7. Coffee Shop\033[m")
         l()
         print (f"\033[32mSabores café:\033[m ")
         
@@ -134,7 +147,9 @@ while True:
             print (f"R${v3} qual vai ser a forma de pagamento")   
         else:
             print (f"\033[31mNão encontrado! Tente novamente.\033[m")    
-    elif programa == 8:
+    elif programa == "8" or programa == "LISTA DE COMPRAS":
+        print ("8. Lista")
+        l()
         p1 = str(input("Digite o primeiro produto: "))
         l()
         v1 = float(input(f"Digite o valor de {p1}: R$")) 
@@ -149,9 +164,10 @@ while True:
         v = v1 + v2 + v3
         l()
         print (f"O valor total é de R${v}")
-    elif programa == 9:
+    elif programa == "9" or programa == "SORTEAR ALUNO":
         from random import choice
-
+        print ("9. Sortear aluno")
+        l()
         n1 = str(input("Digite o primeiro nome: "))
         l()
         n2 = str(input("Digite o segundo nome: "))
@@ -166,7 +182,9 @@ while True:
         sorteado = choice(lista)
         l()
         print (f"O sorteado foi: {sorteado}")
-    elif programa == 10:
+    elif programa == "10" or programa == "ADIVINHAR NÚMERO":
+        print ("10. Adivinhar número")
+        l()
         import random 
         lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         escolhido = random.choice(lista)
@@ -180,28 +198,28 @@ while True:
         else:
             print ("Número não encontrado! Tente novamente.")
         l()
-    elif programa == 11:
+    elif programa == "11" or programa == "COFRE":
+        print ("11. Cofre ")
+        
         senha = "Mia K."
         l()
-        cofre = input("Digite a senha do cofre: ")
-        l()
         tentativas = 3
-        while cofre != senha:
-            tentativas -= 1
-            print (f"Senha incorreta! Restam {tentativas} tentativas. Tente novamente: ")
-            l()
-            
+        
+        while tentativas > 0:
             cofre = input("Digite a senha do cofre: ")
-            l()
-            if tentativas == 0:
-                print ("Cofre trancado!")
+            if cofre == senha:
+                print ("Você acertou!")
                 break
-        if cofre == senha:
-            print ("Você acertou!")
+            else:
+                tentativas -= 1
+                print (f"Senha incorreta! Restam {tentativas} tentativas.")
+        else:
+            print ("Cofre trancado")
+            
         l()
-    elif programa == 12:
+    elif programa == "12" or programa == "SISTEMA DE CORES":
         l()
-        print(f"\033[1;31mBem\033[m \033[1;32mvindo\033[m \033[1;33mao\033[m \033[1;34msistema\033[m \033[1;35mde\033[m \033[1;36mcores!\033[m ")
+        print(f"\033[1;31m12.\033[m \033[1;32mSistema\033[m \033[1;33mde\033[m \033[1;34mcores\033[m \033[1;35mno\033[m \033[1;36mterminal\033[m ")
         l()
         print (f"\033[1;4;31mT\033[m\033[1;4;32mE\033[m\033[1;4;33mX\033[m\033[1;4;34mT\033[m\033[1;4;35mO\033[m\033[1;4;36mS\033[m: ")
         l()
@@ -217,31 +235,32 @@ while True:
         e()
         nova_cor = input("Digite a cor que ira querer: ")
         cor = nova_cor.upper().strip()
-        if cor == "BRANCO":
+        if cor == "BRANCO" or cor == "1":
             código = "37"
             
-        elif cor == "VERMELHO":
+        elif cor == "VERMELHO" or cor == "2":
             código = "31"
             
-        elif cor == "VERDE":
+        elif cor == "VERDE" or cor == "3":
             código = "32"
             
-        elif cor == "AMARELO":
+        elif cor == "AMARELO" or cor == "4":
             código = "33"
             
-        elif cor == "AZUL":
+        elif cor == "AZUL" or cor == "5":
             código = "34"
             
-        elif cor == "ROXO":
+        elif cor == "ROXO" or cor == "6":
             código = "35"
             
-        elif cor == "AZUL CLARO":
+        elif cor == "AZUL CLARO" or cor == "7":
             código = "36"
             
-        elif cor == "CINZA":
+        elif cor == "CINZA" or cor == "8":
             código = "30"
         else:
             print (f"\033[1;31mNão encontrado. Tente novamente!")
+            continue
         
         print (f"\033[47mF\033[m\033[41mU\033[m\033[42mN\033[m\033[43mD\033[m\033[44mO\033[m\033[45mS\033[m\033[46m:\033[m")
         e()
@@ -257,27 +276,74 @@ while True:
         novo_fundo = input("Digite a cor do fundo: ")
         fundo = novo_fundo.upper().strip()
         l()
-        if fundo == "BRANCO": 
+        if fundo == "BRANCO" or fundo == "1": 
             print (f"\033[1;{código};47mFUNDO: {fundo} COR: {cor} \033[m")
-        elif fundo == "VERMELHO":
+        elif fundo == "VERMELHO" or fundo == "2":
             print (f"\033[1;{código};41mFUNDO: {fundo} COR: {cor} \033[m")
-        elif fundo == "VERDE":
+        elif fundo == "VERDE" or fundo == "3":
             print (f"\033[1;{código};42mFUNDO: {fundo} COR: {cor} \033[m")
-        elif fundo == "AMARELO":
+        elif fundo == "AMARELO" or fundo == "4":
             print (f"\033[1;{código};43mFUNDO: {fundo} COR: {cor} \033[m")
-        elif fundo == "AZUL":
+        elif fundo == "AZUL" or fundo == "5":
             print (f"\033[1;{código};44mFUNDO: {fundo} COR: {cor} \033[m")
-        elif fundo == "ROXO":
+        elif fundo == "ROXO" or fundo == "6":
             print (f"\033[1;{código};45mFUNDO: {fundo} COR: {cor} \033[m")
-        elif fundo == "AZUL CLARO":
+        elif fundo == "AZUL CLARO" or fundo == "7":
             print (f"\033[1;{código};46mFUNDO: {fundo} COR: {cor} \033[m")
-        elif fundo == "CINZA":
+        elif fundo == "CINZA" or fundo == "7":
             print (f"\033[1;{código};40mFUNDO: {fundo} COR: {cor} \033[m")
         else:
-            print (f"\033[1;31mNão encontrado. Tente novamente ")
+            print (f"\033[1;31mNão encontrado. Tente novamente \033[m")
+    elif programa == "13" or programa == "CONFIRMAR IDADE":
+        print ("13. Confirmação de idade")
+        l()
+        idade = int(input("Digite sua idade: "))
+        l()
+        if idade <= 17:
+            print (f"\033[32mPode entrar amiginho : ) \033[m")
+        else:
+            print (f"\033[31mSó criança!\033[m")
+        l()
+    elif programa == "14" or programa == "CADASTRO COM CONFIRMAÇÃO":
+        l()
+        email = input("Digite seu email: ")
+        l()
+        senha = input("Digite sua senha: ")
+        l()
+        confirmação = input("Confirme sua senha: ")
+        l()
+        while confirmação != senha:
+            print ("Senha incorreta. Tente novamente!")
+            l()
+            senha = input("Digite sua senha: ")
+            l()
+            confirmação = input("Confirme sua senha: ")
+            l()
+        if confirmação == senha:
+            print ("Cadastro concluído!")
+            l()
+    elif programa == "15" or programa == "ANALISAR NOME":
+        l()
+        print ("15. Analisar nome")
+        l()
+        nome = str(input("Digite seu nome: "))
+        l()
+        n1 = nome.upper()
+        n2 = nome.lower()
+        n3 = nome.title()
+        n4 = len (nome.replace(" ", ""))
+        print (f"Em letras maiúsculas: {n1}")
+        l()
+        print (f"Em minúsculas: {n2}")
+        l()
+        print (f"Escrito normalmente: {n3}")
+        l()
+        print (f"Quantas letras ao total: {n4}")
+        l()
     else:
         print (f"\033[31mPrograma não encontrado. Tente novamente!\033[m ")
-        break
+        l()
+        continue
     e()
     e()
     l()
