@@ -1,63 +1,63 @@
-#VARIAVEIS
+# BLOCO 1: FUNÇÕES
+def l():
+    print("-=" * 40)
 
-nome_padaria = "Padaria Pão Quente"
-p1 = "pão de forma"
-v1 = 5
-p2 = "pão de queijo"
-v2 = 4
-p3 = "sonho"
-v3 = 6
-p4 = "coxinha"
-v4 = 7
-p5 = "broa doce"
-v5 = 5
+def e():
+    print()
 
-#PRODUTOS E VALORES
 
-print ("______________________________")
-print (f"Bem vindo(a) a {nome_padaria}")
-print ("______________________________")
-print ("PRODUTOS:")
-print ("______________________________")
-print (f"{p1} R${v1}")
-print ("______________________________")
-print (f"{p2} R${v2}")
-print ("______________________________")
-print (f"{p3} R${v3}")
-print ("______________________________")
-print (f"{p4} R${v4}")
-print ("______________________________")
-print (f"{p5} R${v5}")
-print ("______________________________")
+# BLOCO 2: VARIÁVEIS
+nome_da_padaria = "Padaria Mel de Abelha"
 
-#USER
+produtos = {
+    "PÃO FRANCÊS": 3.63,
+    "BAGUETE": 5.73,
+    "SONHO": 9.42,
+    "PÃO DE QUEIJO": 1.54,
+    "MISTO QUENTE": 3.56
+}
 
-produto = input("Digite o produto que irá querer: ").lower()
+viagem_custo = 9.87
 
-print ("______________________________")
-quantidade = int(input("Digite a quantidade do produto: "))
-print ("______________________________")
 
-if produto == p1:
-    novo_valorp1 = v1 * quantidade
-    print (f"O total da compra é de R${novo_valorp1}")
-    print ("______________________________")
-elif produto == p2:
-    novo_valorp2 = v2 * quantidade
-    print (f"O total da compra é de R${novo_valorp2}")
-    print ("______________________________")
-elif produto == p3:
-    novo_valorp3 = v3 * quantidade
-    print (f"O total da compra é de R${novo_valorp3}")
-    print ("______________________________")
-elif produto == p4:
-    novo_valorp4 = v4 * quantidade
-    print (f"O total da compra é de R${novo_valorp4}")
-    print ("______________________________")
-elif produto == p5:
-    novo_valorp5 = v5 * quantidade
-    print (f"O valor total da compra é de R${novo_valorp5}")
-    print ("______________________________")
-else:
-    print("Produto não encontrado!")
-    print("______________________________")
+# BLOCO 3: IDENTIFICAÇÃO
+l()
+print(f"Bem-vindo à {nome_da_padaria}!")
+l()
+
+
+# BLOCO 4: PEDIDO
+while True:
+    print("PRODUTOS:")
+    e()
+
+    for nome, preco in produtos.items():
+        print(f"{nome.title()} R${preco:.2f} (unidade)")
+
+    e()
+
+    produto = input("Digite o produto que irá querer: ").strip().upper()
+
+    if produto not in produtos:
+        print("Produto não encontrado. Tente novamente.")
+        e()
+        continue
+
+    try:
+        quantidade = int(input("Digite a quantidade: "))
+    except ValueError:
+        print("Digite a quantidade usando um número inteiro.")
+        e()
+        continue
+
+    if quantidade <= 0:
+        print("A quantidade deve ser maior que zero.")
+        e()
+        continue
+
+    total = produtos[produto] * quantidade + viagem_custo
+
+    print(f"Subtotal: R${produtos[produto] * quantidade:.2f}")
+    print(f"Taxa de viagem: R${viagem_custo:.2f}")
+    print(f"Total: R${total:.2f}")
+    break
